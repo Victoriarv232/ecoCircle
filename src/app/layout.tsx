@@ -1,21 +1,26 @@
-// src/app/layout.tsx
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/globals.css";
+"use client";
+
+import "bootstrap/dist/css/bootstrap.min.css"; // CSS do Bootstrap
+import "../styles/globals.css"; // seu CSS global
 import Navbar from "../components/layout/Navbar";
+import { useEffect } from "react";
 
-export const metadata = {
-  title: "ecoCircle",
-  description: "Tecnologia a favor do reuso sustentável 🌱",
-};
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  useEffect(() => {
+    // Importa o JS do Bootstrap apenas no navegador
+    require("bootstrap/dist/js/bootstrap.bundle.min.js");
+  }, []);
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR">
       <body>
         <Navbar />
-        <main>{children}</main>
+        <main className="container mt-4">{children}</main>
       </body>
     </html>
   );
 }
-

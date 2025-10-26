@@ -1,46 +1,56 @@
-// src/components/layout/Navbar.tsx
 "use client";
 
 import Link from "next/link";
 import { House, MessageCircle, Bookmark, Handshake, User } from "lucide-react";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "../../styles/navbar.css";
+import "../../styles/navbar.css"; // seu CSS específico da navbar
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-success px-3 shadow-sm">
+    <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
-        <Link href="/" className="navbar-brand fw-bold">
-          ecoCircle
+        <Link href="/" className="navbar-brand">
+          EcoCircle
         </Link>
-
-        <ul className="navbar-nav ms-auto d-flex flex-row align-items-center gap-3">
-          <li className="nav-item">
-            <Link href="/" className="nav-link">
-              <House size={22} />
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/chat" className="nav-link">
-              <MessageCircle size={22} />
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/materials" className="nav-link">
-              <Bookmark size={22} />
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/exchange" className="nav-link">
-              <Handshake size={22} />
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link href="/profile" className="nav-link">
-              <User size={22} />
-            </Link>
-          </li>
-        </ul>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link href="/" className="nav-link">
+                <House /> Home
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/messages" className="nav-link">
+                <MessageCircle /> Mensagens
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/bookmarks" className="nav-link">
+                <Bookmark /> Favoritos
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/partners" className="nav-link">
+                <Handshake /> Parceiros
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link href="/profile" className="nav-link">
+                <User /> Perfil
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
   );
