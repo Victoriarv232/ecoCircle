@@ -1,3 +1,8 @@
+## 🌱ECOCIRCLE UNIVERSITY
+Uma plataforma digital que permite a troca de objetos entre alunos da faculdade, promovendo a sustentabilidade, a economia colaborativa e o consumo consciente.
+
+----------------------------------------------------------
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
